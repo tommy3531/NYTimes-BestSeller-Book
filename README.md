@@ -18,8 +18,8 @@ NYT Best Books is an application using the NYTimes Book API to provide a list of
 ## Screenshots
 
 <p align="center">
-<img src="http://s12.postimg.org/ws8o0vxn1/image.png" alt="Select Category" width="342" height="607"/><br>
-<img src="http://s12.postimg.org/bjuzjgj65/image.png" alt="All Category" width="342" height="607"/><br>
-<img src="http://s12.postimg.org/4uog3fxu5/image.png" alt="Specific Category" width="342" height="607"/><br>
-<img src="http://s12.postimg.org/59zpwgjrh/image.png" alt="Detail View" width="342" height="607"/><br>
+<img src="http://s12.postimg.org/ws8o0vxn1/image.png" alt="Select Category" width="342" height="607"/><br><br><br>
+<img src="http://s12.postimg.org/bjuzjgj65/image.png" alt="All Category" width="342" height="607"/><br><br><br>
+<img src="http://s12.postimg.org/4uog3fxu5/image.png" alt="Specific Category" width="342" height="607"/><br><br><br>
+<img src="http://s12.postimg.org/59zpwgjrh/image.png" alt="Detail View" width="342" height="607"/><br><br><br>
 </p>
