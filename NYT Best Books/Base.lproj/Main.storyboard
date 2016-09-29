@@ -1,26 +1,356 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="N5H-eS-rcU">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11106"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--Select Category-->
+        <scene sceneID="JCt-xS-KTL">
+            <objects>
+                <viewController id="XFu-1c-ZI7" customClass="CategoryNamesViewController" customModule="NYT_Best_Books" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Gcd-QV-TbK"/>
+                        <viewControllerLayoutGuide type="bottom" id="N7H-xb-chz"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="hcL-A3-N93">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="53" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="uGZ-y2-PvC">
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" rowHeight="53" id="xKl-xc-0xs" customClass="CategoryTableViewCell" customModule="NYT_Best_Books" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="92" width="320" height="53"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="xKl-xc-0xs" id="9bJ-zL-uIS">
+                                            <frame key="frameInset" width="320" height="52"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5QK-gD-SZJ">
+                                                    <fontDescription key="fontDescription" name="TimesNewRomanPSMT" family="Times New Roman" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="5QK-gD-SZJ" firstAttribute="centerY" secondItem="9bJ-zL-uIS" secondAttribute="centerY" id="F5s-0c-Tli"/>
+                                                <constraint firstAttribute="bottom" secondItem="5QK-gD-SZJ" secondAttribute="bottom" constant="7" id="S1g-d5-RsE"/>
+                                                <constraint firstAttribute="trailing" secondItem="5QK-gD-SZJ" secondAttribute="trailing" constant="8" id="kBK-tc-1If"/>
+                                                <constraint firstItem="5QK-gD-SZJ" firstAttribute="top" secondItem="9bJ-zL-uIS" secondAttribute="top" constant="8" id="myD-2n-NlX"/>
+                                                <constraint firstItem="5QK-gD-SZJ" firstAttribute="leading" secondItem="9bJ-zL-uIS" secondAttribute="leading" constant="8" id="wtp-MR-0st"/>
+                                                <constraint firstItem="5QK-gD-SZJ" firstAttribute="centerX" secondItem="9bJ-zL-uIS" secondAttribute="centerX" id="x0Z-TW-YrG"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="categoryName" destination="5QK-gD-SZJ" id="lBp-Y4-MIV"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="XFu-1c-ZI7" id="gsk-n3-COJ"/>
+                                    <outlet property="delegate" destination="XFu-1c-ZI7" id="YLv-qC-xFz"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="N7H-xb-chz" firstAttribute="top" secondItem="uGZ-y2-PvC" secondAttribute="bottom" id="0NE-dS-I8m"/>
+                            <constraint firstAttribute="trailing" secondItem="uGZ-y2-PvC" secondAttribute="trailing" id="lxK-b7-u8G"/>
+                            <constraint firstItem="uGZ-y2-PvC" firstAttribute="top" secondItem="hcL-A3-N93" secondAttribute="top" id="qgo-dz-K1C"/>
+                            <constraint firstItem="uGZ-y2-PvC" firstAttribute="leading" secondItem="hcL-A3-N93" secondAttribute="leading" id="vr7-YS-htQ"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Select Category" id="lOp-Vn-KV8">
+                        <barButtonItem key="backBarButtonItem" title="Category" id="SQb-tq-enx"/>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="tableView" destination="uGZ-y2-PvC" id="Eqm-z0-jf1"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="GpV-Bz-VO1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1849" y="-528"/>
+        </scene>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="mainView" id="BYZ-38-t0r" customClass="ViewController" customModule="NYT_Best_Books" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="125" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="JA9-pf-n0z">
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" rowHeight="125" id="XLL-06-Vaj" customClass="MainTableViewCell" customModule="NYT_Best_Books" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="92" width="320" height="125"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="XLL-06-Vaj" id="jli-zD-xjy">
+                                            <frame key="frameInset" width="320" height="124"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="6Cb-8R-9L0">
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="64" id="P4e-zX-Xca"/>
+                                                        <constraint firstAttribute="height" constant="96" id="s6m-a1-zvE"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HOk-Dx-LAQ" customClass="TopAlignedLabel" customModule="NYT_Best_Books" customModuleProvider="target">
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="29" id="xlB-cb-iVQ"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" name="TimesNewRomanPS-BoldMT" family="Times New Roman" pointSize="13"/>
+                                                    <color key="textColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.23529411759999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pyR-M4-X6n" customClass="TopAlignedLabel" customModule="NYT_Best_Books" customModuleProvider="target">
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="37" id="jMF-Ud-pWC"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" name="TimesNewRomanPS-BoldMT" family="Times New Roman" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Weeks" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R5g-S4-xOD">
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="21" id="d95-Xa-2Cy"/>
+                                                        <constraint firstAttribute="width" constant="55" id="oAc-gy-jgf"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" name="TimesNewRomanPSMT" family="Times New Roman" pointSize="17"/>
+                                                    <color key="textColor" red="0.36862745099999999" green="0.35294117650000001" blue="0.36078431370000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="124" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QKP-0b-SPp">
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="21" id="evN-I1-E0F"/>
+                                                        <constraint firstAttribute="width" constant="45" id="xDn-Ig-VaP"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" name="TimesNewRomanPSMT" family="Times New Roman" pointSize="17"/>
+                                                    <color key="textColor" red="0.36862745099999999" green="0.35294117650000001" blue="0.36078431370000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="HOk-Dx-LAQ" firstAttribute="top" secondItem="pyR-M4-X6n" secondAttribute="bottom" constant="3" id="EnK-t2-1od"/>
+                                                <constraint firstItem="HOk-Dx-LAQ" firstAttribute="leading" secondItem="6Cb-8R-9L0" secondAttribute="trailing" constant="18" id="JNC-eV-tb4"/>
+                                                <constraint firstItem="6Cb-8R-9L0" firstAttribute="leading" secondItem="jli-zD-xjy" secondAttribute="leadingMargin" constant="17" id="P6c-cF-5Jh"/>
+                                                <constraint firstItem="R5g-S4-xOD" firstAttribute="leading" secondItem="pyR-M4-X6n" secondAttribute="trailing" id="Ucb-ZB-l3G"/>
+                                                <constraint firstItem="QKP-0b-SPp" firstAttribute="top" secondItem="R5g-S4-xOD" secondAttribute="bottom" constant="2" id="XdD-hg-lZE"/>
+                                                <constraint firstItem="R5g-S4-xOD" firstAttribute="top" secondItem="jli-zD-xjy" secondAttribute="topMargin" constant="31" id="c8b-hg-3hh"/>
+                                                <constraint firstItem="pyR-M4-X6n" firstAttribute="leading" secondItem="6Cb-8R-9L0" secondAttribute="trailing" constant="14" id="fwG-OL-C4F"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="R5g-S4-xOD" secondAttribute="trailing" id="hEf-vf-kWv"/>
+                                                <constraint firstItem="R5g-S4-xOD" firstAttribute="centerX" secondItem="QKP-0b-SPp" secondAttribute="centerX" id="lyo-yM-IDr"/>
+                                                <constraint firstItem="HOk-Dx-LAQ" firstAttribute="trailing" secondItem="pyR-M4-X6n" secondAttribute="trailing" id="qii-6N-che"/>
+                                                <constraint firstItem="6Cb-8R-9L0" firstAttribute="centerY" secondItem="jli-zD-xjy" secondAttribute="centerY" id="tg4-ag-sgZ"/>
+                                                <constraint firstItem="pyR-M4-X6n" firstAttribute="top" secondItem="6Cb-8R-9L0" secondAttribute="top" constant="10" id="vz0-fl-elg"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="authorLabelHeight" destination="xlB-cb-iVQ" id="xlm-u8-KY7"/>
+                                            <outlet property="bookAuthor" destination="HOk-Dx-LAQ" id="zqc-x5-yWI"/>
+                                            <outlet property="bookImage" destination="6Cb-8R-9L0" id="xii-CM-oHE"/>
+                                            <outlet property="bookTitle" destination="pyR-M4-X6n" id="Rr8-Ke-Gmi"/>
+                                            <outlet property="ranksLabel" destination="R5g-S4-xOD" id="KjW-FG-ayk"/>
+                                            <outlet property="ranksValue" destination="QKP-0b-SPp" id="G7I-Vl-xgl"/>
+                                            <outlet property="titleLabelHieght" destination="jMF-Ud-pWC" id="5JD-jy-5s6"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="IkH-0U-YYM"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="JwQ-yu-LOU"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="JA9-pf-n0z" secondAttribute="bottom" id="K5h-x4-i4b"/>
+                            <constraint firstItem="JA9-pf-n0z" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="-64" id="aj0-wb-hrd"/>
+                            <constraint firstAttribute="trailing" secondItem="JA9-pf-n0z" secondAttribute="trailing" id="wf9-D5-8BW"/>
+                            <constraint firstItem="JA9-pf-n0z" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="zbm-EQ-SZb"/>
+                        </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="AwS-yN-GWL">
+                        <barButtonItem key="backBarButtonItem" title="Back" id="u6b-Xb-Sqx"/>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="tableView" destination="JA9-pf-n0z" id="E40-tw-yJD"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="1848.8" y="138.98050974512745"/>
+        </scene>
+        <!--Detail View Controller-->
+        <scene sceneID="7jK-BY-m9d">
+            <objects>
+                <viewController storyboardIdentifier="detailView" id="8Nz-6T-Nap" customClass="DetailViewController" customModule="NYT_Best_Books" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="F2X-1Y-4Qe"/>
+                        <viewControllerLayoutGuide type="bottom" id="8n0-SI-uRb"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Yd1-8H-zcp">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="s1e-4u-fOc"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="95S-0i-iBs">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="280" id="MOz-a0-3zz"/>
+                                    <constraint firstAttribute="width" constant="175" id="UlY-Bh-6wl"/>
+                                </constraints>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arc" translatesAutoresizingMaskIntoConstraints="NO" id="sZq-6h-W7K">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="253" id="dji-J2-pJl"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="THE LIGHT BETWEEN OCEANS" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="10" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QWs-AE-ZVs" customClass="TopAlignedLabel" customModule="NYT_Best_Books" customModuleProvider="target">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="05J-7h-00e"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="TimesNewRomanPS-BoldMT" family="Times New Roman" pointSize="30"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="by Romaine" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tdG-7Q-bNU" customClass="TopAlignedLabel" customModule="NYT_Best_Books" customModuleProvider="target">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="35" id="M3m-YM-ymC"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="TimesNewRomanPS-BoldMT" family="Times New Roman" pointSize="15"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="12" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SSQ-xq-Kh5" customClass="TopAlignedLabel" customModule="NYT_Best_Books" customModuleProvider="target">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="115" id="hub-39-Gxc"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="TimesNewRomanPSMT" family="Times New Roman" pointSize="15"/>
+                                <color key="textColor" red="0.23529411764705882" green="0.23529411764705882" blue="0.23529411764705882" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N7k-uM-Scg">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="32" id="Tg1-vR-oQR"/>
+                                    <constraint firstAttribute="height" constant="32" id="fCh-cS-Ffv"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6f0-q6-eHv">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="150" id="0NP-Yn-TTa"/>
+                                    <constraint firstAttribute="height" constant="25" id="VgK-pE-mT9"/>
+                                </constraints>
+                                <state key="normal" image="amazon"/>
+                                <connections>
+                                    <action selector="amazonButtonPressed:" destination="8Nz-6T-Nap" eventType="touchUpInside" id="qQq-5R-RCH"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Q9x-c1-bmO">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="150" id="e87-oR-6Ui"/>
+                                    <constraint firstAttribute="height" constant="25" id="m3M-Wk-l0b"/>
+                                </constraints>
+                                <state key="normal" image="nytimes"/>
+                                <connections>
+                                    <action selector="nytimesButtonPressed:" destination="8Nz-6T-Nap" eventType="touchUpInside" id="56d-4P-qUP"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="tdG-7Q-bNU" secondAttribute="trailing" id="0nH-BV-YUN"/>
+                            <constraint firstItem="95S-0i-iBs" firstAttribute="bottom" secondItem="N7k-uM-Scg" secondAttribute="bottom" id="29P-xp-Btc"/>
+                            <constraint firstItem="s1e-4u-fOc" firstAttribute="top" secondItem="F2X-1Y-4Qe" secondAttribute="bottom" id="3Wy-FZ-b9M"/>
+                            <constraint firstItem="SSQ-xq-Kh5" firstAttribute="top" secondItem="QWs-AE-ZVs" secondAttribute="bottom" constant="48" id="3gr-aS-uLC"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="SSQ-xq-Kh5" secondAttribute="trailing" id="6MI-2i-Lpf"/>
+                            <constraint firstAttribute="trailing" secondItem="sZq-6h-W7K" secondAttribute="trailing" id="75p-Xq-Ovk"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Q9x-c1-bmO" secondAttribute="trailing" id="Buj-Hp-2iX"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="tdG-7Q-bNU" secondAttribute="leading" constant="-8" id="DBk-Wg-1VF"/>
+                            <constraint firstItem="QWs-AE-ZVs" firstAttribute="top" secondItem="sZq-6h-W7K" secondAttribute="bottom" constant="-50" id="HXb-Q5-fIC"/>
+                            <constraint firstItem="Q9x-c1-bmO" firstAttribute="top" secondItem="6f0-q6-eHv" secondAttribute="top" id="I8i-bq-qx7"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="QWs-AE-ZVs" secondAttribute="leading" id="JfN-2V-b1w"/>
+                            <constraint firstItem="N7k-uM-Scg" firstAttribute="leading" secondItem="sZq-6h-W7K" secondAttribute="trailing" constant="-48" id="JfS-dL-rpg"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="QWs-AE-ZVs" secondAttribute="trailing" id="KgH-1t-4YV"/>
+                            <constraint firstItem="s1e-4u-fOc" firstAttribute="bottom" secondItem="sZq-6h-W7K" secondAttribute="bottom" constant="-3" id="Ulk-jm-DR4"/>
+                            <constraint firstItem="6f0-q6-eHv" firstAttribute="top" secondItem="SSQ-xq-Kh5" secondAttribute="bottom" constant="5" id="VNC-sd-uTk"/>
+                            <constraint firstItem="s1e-4u-fOc" firstAttribute="leading" secondItem="Yd1-8H-zcp" secondAttribute="leading" id="WQN-A9-tmQ"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="SSQ-xq-Kh5" secondAttribute="leading" id="ff5-GW-Tph"/>
+                            <constraint firstItem="8n0-SI-uRb" firstAttribute="top" secondItem="6f0-q6-eHv" secondAttribute="bottom" constant="40" id="gDU-EF-c7w"/>
+                            <constraint firstItem="tdG-7Q-bNU" firstAttribute="top" secondItem="QWs-AE-ZVs" secondAttribute="bottom" constant="3" id="gys-Ag-dm4"/>
+                            <constraint firstAttribute="trailing" secondItem="s1e-4u-fOc" secondAttribute="trailing" id="q7X-vh-MVT"/>
+                            <constraint firstItem="sZq-6h-W7K" firstAttribute="leading" secondItem="Yd1-8H-zcp" secondAttribute="leading" id="sNe-P1-bkB"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="6f0-q6-eHv" secondAttribute="leading" id="uRk-A8-ebi"/>
+                            <constraint firstItem="QWs-AE-ZVs" firstAttribute="top" secondItem="N7k-uM-Scg" secondAttribute="bottom" constant="25" id="wjQ-dv-xXk"/>
+                            <constraint firstItem="95S-0i-iBs" firstAttribute="centerX" secondItem="s1e-4u-fOc" secondAttribute="centerX" id="wus-Jf-kuJ"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="amazonButtonOutlet" destination="6f0-q6-eHv" id="1s7-I8-Ma5"/>
+                        <outlet property="authorLabel" destination="tdG-7Q-bNU" id="K08-ok-LRT"/>
+                        <outlet property="bgImage" destination="s1e-4u-fOc" id="7nl-xJ-VLf"/>
+                        <outlet property="bookImage" destination="95S-0i-iBs" id="kc1-Bs-rRK"/>
+                        <outlet property="descLabel" destination="SSQ-xq-Kh5" id="yvn-wi-Ff4"/>
+                        <outlet property="descriptionLabelHeight" destination="hub-39-Gxc" id="gTx-wl-H16"/>
+                        <outlet property="nytButtonOutlet" destination="Q9x-c1-bmO" id="k8z-v0-qaw"/>
+                        <outlet property="rankLabel" destination="N7k-uM-Scg" id="Lrd-ZX-ITL"/>
+                        <outlet property="titleLabel" destination="QWs-AE-ZVs" id="ytm-Rk-SJD"/>
+                        <outlet property="titleLabelHeightConstraint" destination="05J-7h-00e" id="OnB-YJ-Tzc"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QQS-mF-wof" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2618" y="139"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="yiT-cr-UdH">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="N5H-eS-rcU" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="vDO-GA-7S4">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="XFu-1c-ZI7" kind="relationship" relationship="rootViewController" id="5Hh-r8-WNM"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="IDi-vk-IQB" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1076" y="-527.58620689655174"/>
+        </scene>
+        <!--Navbar View Controller-->
+        <scene sceneID="KYj-gU-5g5">
+            <objects>
+                <navigationController storyboardIdentifier="navBar" automaticallyAdjustsScrollViewInsets="NO" id="9hQ-sU-Dxy" customClass="NavbarViewController" customModule="NYT_Best_Books" customModuleProvider="target" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="thI-e2-NGe">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="Sgx-IS-7yj"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gX9-SA-Pgz" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1076" y="138.98050974512745"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="amazon" width="125" height="25"/>
+        <image name="arc" width="540" height="364"/>
+        <image name="nytimes" width="125" height="25"/>
+    </resources>
 </document>
