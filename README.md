@@ -8,6 +8,7 @@ NYT Best Books is an application using the NYTimes Book API to provide a list of
 - [x] Sorting by Rank or Weeks on the list & saving these options
 - [x] Detail Book view with direct links to Amazon & NYTimes review
 - [x] Offline error and data handling
+- [x] Load previously visited categories when offline
 - [ ] 3̶D̶ ̶T̶o̶u̶c̶h̶ ̶S̶u̶p̶p̶o̶r̶t̶
 
 ## Requirements
